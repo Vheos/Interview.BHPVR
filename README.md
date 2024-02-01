@@ -52,13 +52,29 @@
 ## Załączniki
 - <details><summary>Treść maila</summary>
   
-  >  ...
-  > 
-  >  Zadanie należy dostarczyć w postaci wykonywalnego i możliwego do kompilacji kodu projektu Unity dostępnego na publicznym repozytorium. Ostatni commit ma być wykonany do północy dnia 16 stycznia 2024.
-  > 
-  > Nim zaczniesz kodować to przeczytaj uważnie treść zadania, zadaj pytania i przejdź wszystkie fazy wymienione w PDF. Samo kodowanie nie jest dla nas tak ważne jak umiejętność komunikacji i sposób myślenia. Do 9 stycznia będę odpowiadać na twoje maile z pytaniami. Potem już działasz samodzielnie.
-  >
-  > ...
+  > Treść zadania:  
+  > - Gaśnica stoi naprzeciwko przedmiotu, który się pali. Po kliknięciu na zawleczkę ma uruchamiać się animacja odbezpieczenia gaśnicy po wykonaniu której zawleczka ma spaść na podłogę. Następnie gracz ma kliknąć na dyszę, co uruchomi animację ustawienia się dyszy przed gaśnicą na wprost. Teraz gracz może kliknąć na rączkę aby rozpocząć gaszenie. Dopóki trzyma lewy przycisk myszy z gaśnicy wylatuje proszek. Ogień ma być możliwy do zgaszenia, jeżeli gracz dobrze ustawi gaśnicę (6s gaszenia gaśnica ma zgasić ogień). Ogień się "zmniejsza" gdy jest gaszony i powoli zwiększa gdy przestaje być gaszony
+  
+  > Co ma się znaleźć na UI:
+  > - suwak regulujący wysokość gaśnicy względem ognia
+  > - pokazać ile pozostało proszku w gaśnicy (proszek gaśniczy w gaśnicy starcza na 10 sekund gaszenia po czym się kończy)
+  > - moc / poziom “życia“ ognia
+  
+  > Dodatkowe informacje:
+  > - użyj zwykłego środowiska 3D (nie URP), kamera ma być statyczna (bez żadnego systemu sterowania graczem/kamerą), ustawiona na widok z boku (jak w grach 2D) gaśnica ma być widoczna po lewej stronie, a płonący obiekt po prawej 
+  > - zapewnij graczowi klarowne wskazówki dotyczące kroków, które musi wykonać w danej chwili
+  > - dodaj jakieś podstawowe dźwięki
+  > - użyj line renderera do zrobienia węża pomiędzy dyszą a gaśnicą
+  > - do zobrazowania ognia, oraz proszku gaśniczego należy wykorzystać podstawowy system particli (unitypackage ma być możliwie mały)
+  > - użyj gaśnicy dostępnej pod tym linkiem: https://drive.google.com/file/d/1fVVRtl9SbTkwhmgHS3JEqX1Wk7VPVjwV/view?usp=sharing
+  > - rozwiązania wyeksportować jako .unitypackage (scena z wszystkimi zależnościami)
+  > - nie dodawać żadnych tekstur, assetów (poza dźwiękami), zewnętrznych paczek
+  
+  > Zadanie proszę wykonać w 3D (zwykłym nie URP), w Unity w wersji 2020, 2021 lub 2022 ale nie większej niż 2022.3.14.
+  
+  > W odpowiedzi na tego maila proszę o wysłanie:
+  > - rozwiązania w formie .unitypackage
+  > - orientacyjnego czasu jaki zadanie zajęło
   </details>
 - <details><summary>Model gaśnicy</summary>
 
