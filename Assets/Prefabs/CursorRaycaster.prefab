@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Camera>k__BackingField: {fileID: 0}
   <OnHit>k__BackingField: {fileID: 11400000, guid: daa3abf3ea8391948b4297a2374a7bfb, type: 2}
-  <Layers>k__BackingField:
-  - Clickable
+  <RayRadius>k__BackingField: 0.2
+  <Layers>k__BackingField: 06000000

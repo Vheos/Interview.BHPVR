@@ -1,8 +1,8 @@
 ﻿namespace Vheos.Interview.BHPVR
 {
-    using UnityEngine;
+	using UnityEngine;
 
-    [CreateAssetMenu(fileName = nameof(Event), menuName = AssetMenuPaths.Events + nameof(Event))]
-    public class Event : ScriptableEvent
-    { }
+	[CreateAssetMenu(fileName = nameof(Event), menuName = AssetMenuPaths.Events + nameof(Event))]
+	public class Event : ScriptableEvent
+	{ }
 }

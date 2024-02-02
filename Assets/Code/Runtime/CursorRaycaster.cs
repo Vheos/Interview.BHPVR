@@ -1,6 +1,5 @@
 namespace Vheos.Interview.BHPVR
 {
-	using System.Collections.Generic;
 	using UnityEngine;
 	using UnityEngine.InputSystem;
 
@@ -9,9 +8,10 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public Camera Camera { get; private set; }
 		[field: SerializeField] public ColliderEvent OnHit { get; private set; }
+		[field: SerializeField, Range(0f, 1f)] public float RayRadius { get; private set; }
 
 		// Fields
-		[field: SerializeField] public string[] Layers { get; private set; }
+		[field: SerializeField] public Layer[] Layers { get; private set; }
 		private int layerMask;
 
 		// Methods
@@ -20,11 +20,13 @@ namespace Vheos.Interview.BHPVR
 		private Ray CursorRay
 			=> Camera.ScreenPointToRay(CursorPosition);
 		private void InitializeLayerMask()
-			=> layerMask = LayerMask.GetMask(Layers);
+			=> layerMask = Layers.ToLayerMask();
 		private bool ClickedThisFrame()
 			=> Mouse.current.leftButton.wasPressedThisFrame;
 		public bool Raycast(out RaycastHit hit)
-			=> Physics.Raycast(CursorRay, out hit, float.PositiveInfinity, layerMask);
+			=> RayRadius <= 0f
+			? Physics.Raycast(CursorRay, out hit, float.PositiveInfinity, layerMask)
+			: Physics.SphereCast(CursorRay, RayRadius, out hit, float.PositiveInfinity, layerMask);
 		private void DetectHits()
 		{
 			if (ClickedThisFrame() && Raycast(out var hit))

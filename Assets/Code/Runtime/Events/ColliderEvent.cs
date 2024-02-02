@@ -1,8 +1,8 @@
 ﻿namespace Vheos.Interview.BHPVR
 {
-    using UnityEngine;
+	using UnityEngine;
 
-    [CreateAssetMenu(fileName = nameof(ColliderEvent), menuName = AssetMenuPaths.Events + nameof(ColliderEvent))]
-    public class ColliderEvent : ScriptableEvent<Collider>
-    { }
+	[CreateAssetMenu(fileName = nameof(ColliderEvent), menuName = AssetMenuPaths.Events + nameof(ColliderEvent))]
+	public class ColliderEvent : ScriptableEvent<Collider>
+	{ }
 }

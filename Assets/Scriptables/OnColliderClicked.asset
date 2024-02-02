@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 723df8397c6d1c842a9d9ad96b88854d, type: 3}
-  m_Name: OnClicked
+  m_Name: OnColliderClicked
   m_EditorClassIdentifier: 
