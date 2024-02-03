@@ -10,7 +10,7 @@
   - [x] zawleczka upada na podłogę
 - [x] klik na dyszę -> animacja ustawienia się dyszy
 - [x] klik na uchwyt -> gaszenie
-  - [ ] proszek wylatuje tak długo jak przycisk jest trzymany
+  - [x] proszek wylatuje tak długo jak przycisk jest trzymany
   - [x] proszku wystarcza na 10 sekund ciągłego gaszenia
 - [x] gaszenie zmniejsza wielkość ognia
   - [x] ogień wymaga 6 sekund ciągłego gaszenia
@@ -19,9 +19,9 @@
 </br>
 
 ## UI
-- [ ] pozycja Y gaśnicy (lub dyszy?)
-- [ ] ilość proszku w gaśnicy
-- [ ] wielkość ognia 
+- [x] pozycja Y gaśnicy
+- [x] ilość proszku w gaśnicy
+- [x] wielkość ognia 
 - [ ] wskazówki co robić dalej
 
 </br>
