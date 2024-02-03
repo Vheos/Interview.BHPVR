@@ -31,6 +31,8 @@ namespace Vheos.Interview.BHPVR
 					ParticleSystem.Stop();
 			}
 		}
+		public float HealthPercent
+			=> Health / MaxHealth;
 		private void Initialize()
 		{
 			Health = MaxHealth;

@@ -25,6 +25,8 @@ namespace Vheos.Interview.BHPVR
 					IsSpraying = false;
 			}
 		}
+		public float AmmoPercent
+			=> Ammo / MaxAmmo;
 		public bool IsSpraying
 		{
 			get => ParticleSystem.isEmitting;
