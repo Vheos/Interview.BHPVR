@@ -8,7 +8,7 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public ParticleSystem ParticleSystem { get; private set; }
 		[field: SerializeField] public Collider SprayArea { get; private set; }
-		[field: SerializeField, Range(0f, 30f)] public float StartingAmmo { get; private set; }
+		[field: SerializeField, Range(0f, 30f)] public float MaxAmmo { get; private set; }
 
 		// Fields
 		private float ammo;
@@ -19,16 +19,10 @@ namespace Vheos.Interview.BHPVR
 			get => ammo;
 			private set
 			{
-				if (value == ammo)
-					return;
+				ammo = Mathf.Clamp(value, 0f, MaxAmmo);
 
-				ammo = value;
-
-				if (ammo <= 0f)
-				{
-					ammo = 0f;
+				if (ammo == 0f)
 					IsSpraying = false;
-				}
 			}
 		}
 		public bool IsSpraying
@@ -51,13 +45,16 @@ namespace Vheos.Interview.BHPVR
 				}
 			}
 		}
-
-		// Unity
-		private void Awake() => ammo = StartingAmmo;
-		private void FixedUpdate()
+		private void TryReduceAmmo()
 		{
 			if (IsSpraying)
 				Ammo -= Time.fixedDeltaTime;
 		}
+
+		// Unity
+		private void Awake()
+			=> Ammo = MaxAmmo;
+		private void FixedUpdate()
+			=> TryReduceAmmo();
 	}
 }
