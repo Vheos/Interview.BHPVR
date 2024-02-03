@@ -3,17 +3,16 @@ namespace Vheos.Interview.BHPVR
 	using System;
 	using System.Linq;
 	using UnityEngine;
+	using UnityEngine.InputSystem;
 
 	public class Extinguisher : MonoBehaviour
 	{
 		// Dependencies
 		[field: SerializeField] public Animator Animator { get; private set; }
 		[field: SerializeField] public ColliderEvent OnElementClicked { get; private set; }
-
+		[field: SerializeField] public Event OnUpdateHints { get; private set; }
 		[field: SerializeField] public HandleLock HandleLock { get; private set; }
 		[field: SerializeField] public MuzzleGun MuzzleGun { get; private set; }
-
-
 		[field: SerializeField] public Collider[] LockColliders { get; private set; }
 		[field: SerializeField] public Collider[] MuzzleColliders { get; private set; }
 		[field: SerializeField] public Collider[] HandleColliders { get; private set; }
@@ -26,15 +25,17 @@ namespace Vheos.Interview.BHPVR
 			else if (MuzzleColliders.Contains(collider))
 				IsMuzzleReady = !IsMuzzleReady;
 			else if (HandleColliders.Contains(collider))
-			{
-				TryToggleHandle();
-			}
+				TryPressHandle();
 		}
-
-		private void TryToggleHandle()
+		private void TryPressHandle()
 		{
-			IsHandlePressed = !IsHandlePressed && HandleLock.IsUnlocked;
-			MuzzleGun.IsSpraying = IsHandlePressed;
+			if (HandleLock.IsUnlocked && !IsHandlePressed)
+				IsHandlePressed = true;
+		}
+		private void TryReleaseHandle()
+		{
+			if (Mouse.current.leftButton.wasReleasedThisFrame && IsHandlePressed)
+				IsHandlePressed = false;
 		}
 
 		public bool IsMuzzleReady
@@ -45,11 +46,19 @@ namespace Vheos.Interview.BHPVR
 		public bool IsHandlePressed
 		{
 			get => Animator.GetBool(nameof(IsHandlePressed));
-			set => Animator.SetBool(nameof(IsHandlePressed), value);
+			set
+			{
+				Animator.SetBool(nameof(IsHandlePressed), value);
+				MuzzleGun.IsSpraying = value;
+			}
 		}
 
 		// Unity
-		private void OnEnable() => OnElementClicked.Subscribe(DetectClickedElement);
-		private void OnDisable() => OnElementClicked.Subscribe(DetectClickedElement);
+		private void OnEnable()
+			=> OnElementClicked.Subscribe(DetectClickedElement);
+		private void Update()
+			=> TryReleaseHandle();
+		private void OnDisable()
+			=> OnElementClicked.Unsubscribe(DetectClickedElement);
 	}
 }
