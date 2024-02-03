@@ -6,15 +6,15 @@
 
 ## Gameplay
 - [x] gaśnica po lewej, płonący przedmiot po prawej
-- [ ] klik na zawkleczkę -> animacja odbezpieczenia gaśnicy
-  - [ ] zawleczka upada na podłogę
-- [ ] klik na dyszę -> animacja ustawienia się dyszy
-- [ ] klik na rączkę -> gaszenie
+- [x] klik na zawkleczkę -> animacja odbezpieczenia gaśnicy
+  - [x] zawleczka upada na podłogę
+- [x] klik na dyszę -> animacja ustawienia się dyszy
+- [x] klik na uchwyt -> gaszenie
   - [ ] proszek wylatuje tak długo jak przycisk jest trzymany
-  - [ ] proszku wystarcza na 10 sekund ciągłego gaszenia
-- [ ] gaszenie zmniejsza wielkość ognia
-  - [ ] wymaga 6 sekund ciągłego gaszenia
-  - [ ] wielkość ognia zwiększa się gdy nie jest gaszonny
+  - [x] proszku wystarcza na 10 sekund ciągłego gaszenia
+- [x] gaszenie zmniejsza wielkość ognia
+  - [x] ogień wymaga 6 sekund ciągłego gaszenia
+  - [x] wielkość ognia zwiększa się gdy nie jest gaszonny
 
 </br>
 
@@ -30,16 +30,16 @@
 - [x] Wersja Unity: `2022.3.14f1`
 - [x] Render pipeline: `Built-in`
 - [ ] dźwięki
-- [ ] wąż pomiędzy dyszą a gaśnicą -> `LineRenderer`
-- [ ] efekty proszku gaśniczy i ognia -> `ParticleSystem`
+- [x] wąż pomiędzy dyszą a gaśnicą -> `LineRenderer`
+- [x] efekty proszku gaśniczy i ognia -> `ParticleSystem`
 
 </br>
 
 ## Brak
 - [x] kontroli kamerą
 - [x] postaci
-- [ ] zewnętrznych paczek
-- [ ] assetów poza dzwiękami
+- [x] zewnętrznych paczek
+- [x] zewnętrznych assetów (poza dzwiękami)
 
 </br>
 
