@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Slider>k__BackingField: {fileID: 6656291733650061000}
   <Target>k__BackingField: {fileID: 0}
-  <MaxOffset>k__BackingField: {x: 0, y: 10, z: 0}
+  <MaxOffset>k__BackingField: {x: 0, y: 5, z: 0}
   <UseWorldSpace>k__BackingField: 1
 --- !u!114 &6656291733650061000
 MonoBehaviour:

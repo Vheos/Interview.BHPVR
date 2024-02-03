@@ -6,12 +6,14 @@ namespace Vheos.Interview.BHPVR
 	{
 		// Dependencies
 		[field: SerializeField] public ParticleSystem ParticleSystem { get; private set; }
-		[field: SerializeField] public Layer ExtinguishingLayer { get; private set; }
-		[field: SerializeField, Range(1f, 30f)] public float MaxHealth { get; private set; }
-		[field: SerializeField, Range(0f, 5f)] public float HealthRegen { get; private set; }
-		[field: SerializeField] public AnimationCurve SizeByHealth { get; private set; }
-
+		[field: SerializeField] public AudioSource AudioSource { get; private set; }
 		// Fields
+		[field: SerializeField] public Layer ExtinguishingLayer { get; private set; }
+		[field: SerializeField, Range(1f, 15f)] public float MaxHealth { get; private set; }
+		[field: SerializeField, Range(0f, 2f)] public float HealthRegen { get; private set; }
+		[field: SerializeField] public AnimationCurve SizeByHealth { get; private set; }
+		[field: SerializeField] public AnimationCurve VolumeByHealth { get; private set; }
+		[field: SerializeField] public AnimationCurve PitchByHealth { get; private set; }
 		private float health;
 		private int extinguishingLayerMask;
 		private bool hasBeenSprayedThisFrame;
@@ -24,11 +26,18 @@ namespace Vheos.Interview.BHPVR
 			get => health;
 			private set
 			{
-				health = Mathf.Clamp(value, 0f, MaxHealth);
-				UpdateSize();
+				value = Mathf.Clamp(value, 0f, MaxHealth);
+				if (value == health)
+					return;
+
+				health = value;
+				UpdateSizeAndAudio();
 
 				if (health == 0f)
+				{
 					ParticleSystem.Stop();
+					AudioSource.Stop();
+				}
 			}
 		}
 		public float HealthPercent
@@ -49,12 +58,15 @@ namespace Vheos.Interview.BHPVR
 		private void TryRegenHealth()
 		{
 			if (IsBurning && !hasBeenSprayedThisFrame)
-				Health += HealthRegen * Time.fixedDeltaTime;
+				Health += HealthPercent * HealthRegen * Time.fixedDeltaTime;
 		}
-		private void UpdateSize()
+		private void UpdateSizeAndAudio()
 		{
-			float size = SizeByHealth.Evaluate(health / MaxHealth);
+			float percent = HealthPercent;
+			float size = SizeByHealth.Evaluate(percent);
 			ParticleSystem.transform.localScale = new(size, size, size);
+			AudioSource.volume = VolumeByHealth.Evaluate(percent);
+			AudioSource.pitch = PitchByHealth.Evaluate(percent);
 		}
 
 		// Unity

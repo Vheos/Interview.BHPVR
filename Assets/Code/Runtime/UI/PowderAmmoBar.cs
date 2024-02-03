@@ -10,7 +10,7 @@ namespace Vheos.Interview.BHPVR
 
 		// Methods
 		private void InitializeValueBar()
-			=> ValueBar.GetPercentValue = () => Extinguisher.MuzzleGun.AmmoPercent;
+			=> ValueBar.GetPercentValue = () => Extinguisher.PowderGun.AmmoPercent;
 
 		// Unity
 		private void Awake()

@@ -7,6 +7,7 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public Animator Animator { get; private set; }
 		[field: SerializeField] public Rigidbody Rigidbody { get; private set; }
+		[field: SerializeField] public AudioSource AudioSource { get; private set; }
 
 		// Fields
 		public bool IsUnlocked { get; private set; }
@@ -19,6 +20,7 @@ namespace Vheos.Interview.BHPVR
 
 			IsUnlocked = true;
 			Animator.enabled = true;
+			AudioSource.Play();
 		}
 		public void EnableRagdoll()
 		{

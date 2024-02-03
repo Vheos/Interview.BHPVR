@@ -8,9 +8,9 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public Camera Camera { get; private set; }
 		[field: SerializeField] public ColliderEvent OnHit { get; private set; }
-		[field: SerializeField, Range(0f, 1f)] public float RayRadius { get; private set; }
 
 		// Fields
+		[field: SerializeField, Range(0f, 1f)] public float RayRadius { get; private set; }
 		[field: SerializeField] public Layer[] Layers { get; private set; }
 		private int layerMask;
 

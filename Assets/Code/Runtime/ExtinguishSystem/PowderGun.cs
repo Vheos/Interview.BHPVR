@@ -3,12 +3,16 @@ namespace Vheos.Interview.BHPVR
 	using System;
 	using UnityEngine;
 
-	public class MuzzleGun : MonoBehaviour
+	public class PowderGun : MonoBehaviour
 	{
 		// Dependencies
 		[field: SerializeField] public ParticleSystem ParticleSystem { get; private set; }
 		[field: SerializeField] public Collider SprayArea { get; private set; }
+		[field: SerializeField] public AudioSource AudioSource { get; private set; }
+
+		// Fields
 		[field: SerializeField, Range(0f, 30f)] public float MaxAmmo { get; private set; }
+		private float lastSfxTime;
 
 		// Fields
 		private float ammo;
@@ -19,7 +23,11 @@ namespace Vheos.Interview.BHPVR
 			get => ammo;
 			private set
 			{
-				ammo = Mathf.Clamp(value, 0f, MaxAmmo);
+				value = Mathf.Clamp(value, 0f, MaxAmmo);
+				if (value == ammo)
+					return;
+
+				ammo = value;
 
 				if (ammo == 0f)
 					IsSpraying = false;
@@ -38,11 +46,15 @@ namespace Vheos.Interview.BHPVR
 				if (value && Ammo > 0f)
 				{
 					ParticleSystem.Play();
+					AudioSource.time = lastSfxTime;
+					AudioSource.Play();
 					SprayArea.enabled = true;
 				}
 				else if (!value)
 				{
 					ParticleSystem.Stop();
+					lastSfxTime = AudioSource.time;
+					AudioSource.Stop();
 					SprayArea.enabled = false;
 				}
 			}
