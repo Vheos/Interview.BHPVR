@@ -10,7 +10,7 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public Animator Animator { get; private set; }
 		[field: SerializeField] public ColliderEvent OnElementClicked { get; private set; }
-		[field: SerializeField] public Event OnUpdateHints { get; private set; }
+		[field: SerializeField] public GameFlags TutorialFlags { get; private set; }
 		[field: SerializeField] public HandleLock HandleLock { get; private set; }
 		[field: SerializeField] public AudioSource HandleAudioSource { get; private set; }
 		[field: SerializeField] public PowderGun PowderGun { get; private set; }
@@ -42,7 +42,14 @@ namespace Vheos.Interview.BHPVR
 		public bool IsMuzzleReady
 		{
 			get => Animator.GetBool(nameof(IsMuzzleReady));
-			set => Animator.SetBool(nameof(IsMuzzleReady), value);
+			set
+			{
+				if (value == IsMuzzleReady)
+					return;
+
+				Animator.SetBool(nameof(IsMuzzleReady), value);
+				TutorialFlags[Flag.ExtinguisherMuzzleIsReady] = value;
+			}
 		}
 		public bool IsHandlePressed
 		{

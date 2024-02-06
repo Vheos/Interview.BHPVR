@@ -7,6 +7,8 @@ namespace Vheos.Interview.BHPVR
 		// Dependencies
 		[field: SerializeField] public ParticleSystem ParticleSystem { get; private set; }
 		[field: SerializeField] public AudioSource AudioSource { get; private set; }
+		[field: SerializeField] public GameFlags TutorialFlags { get; private set; }
+
 		// Fields
 		[field: SerializeField] public Layer ExtinguishingLayer { get; private set; }
 		[field: SerializeField, Range(1f, 15f)] public float MaxHealth { get; private set; }
@@ -34,10 +36,7 @@ namespace Vheos.Interview.BHPVR
 				UpdateSizeAndAudio();
 
 				if (health == 0f)
-				{
-					ParticleSystem.Stop();
-					AudioSource.Stop();
-				}
+					Die();
 			}
 		}
 		public float HealthPercent
@@ -67,6 +66,12 @@ namespace Vheos.Interview.BHPVR
 			ParticleSystem.transform.localScale = new(size, size, size);
 			AudioSource.volume = VolumeByHealth.Evaluate(percent);
 			AudioSource.pitch = PitchByHealth.Evaluate(percent);
+		}
+		private void Die()
+		{
+			ParticleSystem.Stop();
+			AudioSource.Stop();
+			TutorialFlags[Flag.FireIsExtinguished] = true;
 		}
 
 		// Unity

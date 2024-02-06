@@ -9,6 +9,7 @@ namespace Vheos.Interview.BHPVR
 		[field: SerializeField] public ParticleSystem ParticleSystem { get; private set; }
 		[field: SerializeField] public Collider SprayArea { get; private set; }
 		[field: SerializeField] public AudioSource AudioSource { get; private set; }
+		[field: SerializeField] public GameFlags TutorialFlags { get; private set; }
 
 		// Fields
 		[field: SerializeField, Range(0f, 30f)] public float MaxAmmo { get; private set; }
@@ -49,6 +50,7 @@ namespace Vheos.Interview.BHPVR
 					AudioSource.time = lastSfxTime;
 					AudioSource.Play();
 					SprayArea.enabled = true;
+					TutorialFlags[Flag.ExtinguisherIsSpraying] = true;
 				}
 				else if (!value)
 				{
@@ -56,6 +58,7 @@ namespace Vheos.Interview.BHPVR
 					lastSfxTime = AudioSource.time;
 					AudioSource.Stop();
 					SprayArea.enabled = false;
+					TutorialFlags[Flag.ExtinguisherIsSpraying] = false;
 				}
 			}
 		}

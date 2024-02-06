@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ParticleSystem>k__BackingField: {fileID: 6711685795660163814}
   <AudioSource>k__BackingField: {fileID: 3882256225824249658}
+  <TutorialFlags>k__BackingField: {fileID: 11400000, guid: 9aa92dec2ed392241b80c261e61ead70, type: 2}
   <ExtinguishingLayer>k__BackingField: 7
   <MaxHealth>k__BackingField: 6
   <HealthRegen>k__BackingField: 1

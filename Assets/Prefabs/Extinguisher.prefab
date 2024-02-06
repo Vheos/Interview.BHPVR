@@ -204,6 +204,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 8615986329799342775}
   <Rigidbody>k__BackingField: {fileID: 3155561781439249291}
   <AudioSource>k__BackingField: {fileID: 2563165606504657873}
+  <TutorialFlags>k__BackingField: {fileID: 11400000, guid: 9aa92dec2ed392241b80c261e61ead70, type: 2}
 --- !u!95 &8615986329799342775
 Animator:
   serializedVersion: 5
@@ -5670,7 +5671,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d6823fd72a628474bb8796de639338dc, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5797,6 +5798,18 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e2e47cca35d8d9c42a140fe80d2afb0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2e47cca35d8d9c42a140fe80d2afb0a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2e47cca35d8d9c42a140fe80d2afb0a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: e2e47cca35d8d9c42a140fe80d2afb0a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e2e47cca35d8d9c42a140fe80d2afb0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6037,7 +6050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Animator>k__BackingField: {fileID: 2431161097484983756}
   <OnElementClicked>k__BackingField: {fileID: 11400000, guid: daa3abf3ea8391948b4297a2374a7bfb, type: 2}
-  <OnUpdateHints>k__BackingField: {fileID: 0}
+  <TutorialFlags>k__BackingField: {fileID: 11400000, guid: 9aa92dec2ed392241b80c261e61ead70, type: 2}
   <HandleLock>k__BackingField: {fileID: 2000191937242728925}
   <HandleAudioSource>k__BackingField: {fileID: 1183038826394968366}
   <PowderGun>k__BackingField: {fileID: 4429285886921724958}
@@ -6126,6 +6139,7 @@ MonoBehaviour:
   <ParticleSystem>k__BackingField: {fileID: 7296709509896838135}
   <SprayArea>k__BackingField: {fileID: 4587533507190218868}
   <AudioSource>k__BackingField: {fileID: 60615002758296612}
+  <TutorialFlags>k__BackingField: {fileID: 11400000, guid: 9aa92dec2ed392241b80c261e61ead70, type: 2}
   <MaxAmmo>k__BackingField: 10
 --- !u!64 &5911090317879644693
 MeshCollider:
