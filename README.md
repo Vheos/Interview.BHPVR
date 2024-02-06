@@ -1,6 +1,6 @@
 ## Deadline
 - [ ] preferowany: `2024-02-03`
-- [ ] ostateczny: `2024-02-15`
+- [x] ostateczny: `2024-02-15`
 
 </br>
 
@@ -14,7 +14,7 @@
   - [x] proszku wystarcza na 10 sekund ciągłego gaszenia
 - [x] gaszenie zmniejsza wielkość ognia
   - [x] ogień wymaga 6 sekund ciągłego gaszenia
-  - [x] wielkość ognia zwiększa się gdy nie jest gaszonny
+  - [x] wielkość ognia zwiększa się gdy nie jest gaszony
 
 </br>
 
@@ -22,14 +22,14 @@
 - [x] pozycja Y gaśnicy
 - [x] ilość proszku w gaśnicy
 - [x] wielkość ognia 
-- [ ] wskazówki co robić dalej
+- [x] wskazówki co robić dalej
 
 </br>
 
 ## Dodatkowe informacje
 - [x] Wersja Unity: `2022.3.14f1`
 - [x] Render pipeline: `Built-in`
-- [ ] dźwięki
+- [x] dźwięki
 - [x] wąż pomiędzy dyszą a gaśnicą -> `LineRenderer`
 - [x] efekty proszku gaśniczy i ognia -> `ParticleSystem`
 
@@ -44,8 +44,8 @@
 </br>
 
 ## Dostarczenie
-- [ ] .unitypackage (scena z wszystkimi zależnościami)
-- [ ] orientacyjny czas pracy
+- [x] .unitypackage (scena ze wszystkimi zależnościami)
+- [x] orientacyjny czas pracy
 
 </br>
 
