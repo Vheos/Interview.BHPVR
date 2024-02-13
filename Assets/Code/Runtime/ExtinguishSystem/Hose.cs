@@ -6,21 +6,23 @@ namespace Vheos.Interview.BHPVR
 	{
 		// Dependencies
 		[field: SerializeField] public LineRenderer LineRenderer { get; private set; }
-		[field: SerializeField] public Transform From { get; private set; }
-		[field: SerializeField] public Transform To { get; private set; }
+		[field: SerializeField] public Transform[] Targets { get; private set; }
 
 		// Fields
-		private readonly Vector3[] positions = new Vector3[2];
+		private Vector3[] positions;
 
 		// Methods
 		private void UpdatePositions()
 		{
-			positions[0] = From.position;
-			positions[1] = To.position;
+			for (int i = 0; i < positions.Length; i++)			
+				positions[i] = Targets[i].position;
+			
 			LineRenderer.SetPositions(positions);
 		}
 
 		// Unity
+		protected void Awake() 
+			=> positions = new Vector3[Targets.Length];
 		protected void Update()
 			=> UpdatePositions();
 	}

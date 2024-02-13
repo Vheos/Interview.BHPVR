@@ -1010,6 +1010,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime2
+      value: 62258
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime4
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.a
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.key3.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 707234711387530723, guid: eaffc96db3223874eab68172deabc676, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 855045565021238007, guid: eaffc96db3223874eab68172deabc676, type: 3}
       propertyPath: <Camera>k__BackingField
       value: 

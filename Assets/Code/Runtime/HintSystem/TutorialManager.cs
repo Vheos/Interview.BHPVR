@@ -47,7 +47,6 @@ namespace Vheos.Interview.BHPVR
 
 					currentHint = hint;
 					Text.text = hint.Text;
-					UpdateLine(hint.LineTarget);
 					return;
 				}
 		}
@@ -55,6 +54,12 @@ namespace Vheos.Interview.BHPVR
 		// Awake
 		private void Awake()
 			=> UpdateHint();
+		private void Update()
+		{
+			if (currentHint != null)
+				UpdateLine(currentHint.LineTarget);
+		}
+
 		private void OnEnable()
 			=> TutorialFlags.OnChange += UpdateHint;
 		private void OnDisable()
